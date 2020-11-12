@@ -43,7 +43,10 @@ with DAG(dag_id=DAG_NAME,
     ))
 
     sql = "xxxx"
-    postgres_conn_id = bi_report_id
+    postgres_conn_id = "bi_report_id"
+    aws_conn_id = "xxxx"
+    bucket_name = "xxxx"
+    dest_prefix_filename = "xxxxx"
     postresql_upload_s3_task = (PostgreSQLToS3Operator(
         task_id="upload",
         aws_conn_id=aws_conn_id,
@@ -51,9 +54,7 @@ with DAG(dag_id=DAG_NAME,
         bucket_name=bucket_name,
         dest_prefix_filename=dest_prefix_filename,
         sql=sql,
-        delimiter='|',
-        file_control_name=file_control_name,
-        file_control=True
+        delimiter='|'
     ))
 
     start_task >> postresql_upload_s3_task >> end_task

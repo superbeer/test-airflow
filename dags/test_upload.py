@@ -42,11 +42,11 @@ with DAG(dag_id=DAG_NAME,
         task_id='end_task'
     ))
 
-    sql = "xxxx"
+    sql = "SELECT calendar FROM bi_report.calendar limit 10;"
     postgres_conn_id = "bi_report_id"
-    aws_conn_id = "xxxx"
-    bucket_name = "xxxx"
-    dest_prefix_filename = "xxxxx"
+    aws_conn_id = "aws_datalake_conn"
+    bucket_name = "cdl.cto.prod"
+    dest_prefix_filename = "airflow/result/test_upload.csv"
     postresql_upload_s3_task = (PostgreSQLToS3Operator(
         task_id="upload",
         aws_conn_id=aws_conn_id,

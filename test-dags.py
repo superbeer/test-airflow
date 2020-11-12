@@ -4,7 +4,7 @@ from plugins.operators.my_custom_operator import MyCustomOperator
 from datetime import datetime
 
 
-with DAG('dag_with_custom_operator', start_date=datetime(2020, 2, 28)) as dag:
+with DAG('dag_with_custom_operator', start_date=datetime(2020, 11, 10)) as dag:
     (
         BashOperator(
             task_id='bash_hello',

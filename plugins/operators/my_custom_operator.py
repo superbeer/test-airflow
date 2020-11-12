@@ -7,5 +7,5 @@ class MyCustomOperator(BaseOperator):
         super(MyCustomOperator, self).__init__(*args, **kwargs)
 
     def execute(self, context):
-        print("Hello World")
+        print("Hello World mycustomoperator for testing")
         print(context)

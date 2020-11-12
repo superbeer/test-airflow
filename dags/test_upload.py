@@ -6,7 +6,7 @@ from datetime import datetime, timedelta, date
 from airflow import DAG
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.operators.python_operator import PythonOperator
-from plugins.operators.mysql_to_s3 import MySQLToS3Operator
+from plugins.operators.postgres_to_s3 import PostgreSQLToS3Operator
 
 import csv
 
